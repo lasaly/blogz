@@ -1,5 +1,28 @@
-{% extends "base.html"%}
+{% extends "base.html" %}
+{% block content %}
 
-{% block content%}
+
+    <form action="/blog" method='post'>
+        <br>
+        <br>
+            <label for="title">
+                Daily Rumination Topic: 
+                <span class="error"> {{ title_error }} </span>
+                <br>
+                <input id="title" type="text" name='title' value="{{ title }}"/>
+            </label>
+        <br>
+        <br>
+        <br>
+            <label for="body">
+                Ruminate Here:
+            <span class="error"> {{ body_error }} </span>
+            <br>
+                <textarea id="body" name='body' cols="70" rows="10" value="{{ body }}"></textarea>
+            </label>
+        <br>
+        <br>
+        <input type="submit" value='Add Daily Rumination' />
+    </form>
 
 {% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content%}
+ 
+    {% if blogs|length == 0 %}   
+        <h2 style="color: green;"><em> Momentarily lacks soulful ruminations. </em></h2>
+        
+    {% else %}
+
+        {% for blog in blogs %}
+
+        <a href="/blog?id={{ blog.id }}">
+            <h3>{{ blog.title }}</h3>
+        </a>
+            <p>
+                {{ blog.body }}
+            </p>
+        <hr>
+        {% endfor %}
+  
+    {% endif %}
+
+{% endblock %}
