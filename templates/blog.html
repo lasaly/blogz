@@ -15,6 +15,7 @@
             <p>
                 {{ blog.body }}
             </p>
+            ruminations belong to <a href="/blog?user={{ blog.owner.id }}">{{ blog.owner.username }}</a>
         <hr>
         {% endfor %}
   
